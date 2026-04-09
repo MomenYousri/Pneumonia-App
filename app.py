@@ -10,10 +10,9 @@ st.write("قم برفع صورة أشعة سينية للصدر (X-ray) وسيق
 
 # 2. دالة لتحميل النموذج (استخدمنا cache لكي لا يحمل النموذج في كل مرة نرفع صورة)
 @st.cache_resource
-def load_model():
-model = tf.keras.models.load_model('pneumonia_pretrained_model.h5', compile=False)  
-return model
-
+def load_my_model():
+    model = tf.keras.models.load_model('pneumonia_pretrained_model.h5', compile=False) # صحيح: توجد مسافة بادئة
+    return model
 model = load_model()
 
 # 3. دالة لمعالجة الصورة قبل إدخالها للنموذج
