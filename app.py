@@ -12,8 +12,7 @@ st.write("قم برفع صورة أشعة سينية للصدر (X-ray) وسيق
 @st.cache_resource
 def load_model():
     # تأكد أن اسم الملف هنا يطابق اسم الملف الذي قمت بتحميله
-    model = tf.keras.models.load_model('pneumonia_pretrained_model.h5')
-    return model
+model = tf.keras.models.load_model('pneumonia_pretrained_model.h5', compile=False)    return model
 
 model = load_model()
 
