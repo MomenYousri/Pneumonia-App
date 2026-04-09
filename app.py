@@ -9,7 +9,7 @@ st.title("🫁 تطبيق الكشف عن الالتهاب الرئوي (Pneumon
 st.write("قم برفع صورة أشعة سينية للصدر (X-ray) وسيقوم الذكاء الاصطناعي بتشخيصها.")
 
 # 2. دالة لتحميل النموذج (استخدمنا cache لكي لا يحمل النموذج في كل مرة نرفع صورة)
-@st.cache_resource
+
 def load_model():
     model = tf.keras.models.load_model('pneumonia_pretrained_model.h5', compile=False, safe_mode=False) # صحيح: توجد مسافة بادئة
     return model
